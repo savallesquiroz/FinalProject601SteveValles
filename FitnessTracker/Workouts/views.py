@@ -2,6 +2,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Workout, Exercise
 from .forms import WorkoutForm, ExerciseForm
 
+
+def home(request):
+    return render(request, 'workouts/home.html')
+
 def workout_list(request):
     workouts = Workout.objects.filter(user=request.user)
     return render(request, 'workouts/workout_list.html', {'workouts': workouts})
