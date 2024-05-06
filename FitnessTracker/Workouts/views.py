@@ -1,18 +1,22 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Workout, Exercise
 from .forms import WorkoutForm, ExerciseForm
+from .api import get_exercises
 
 
 def home(request):
     return render(request, 'workouts/home.html')
 
+
 def workout_list(request):
     workouts = Workout.objects.filter(user=request.user)
     return render(request, 'workouts/workout_list.html', {'workouts': workouts})
 
+
 def workout_detail(request, pk):
     workout = Workout.objects.get(id=pk)
     return render(request, 'workouts/workout_detail.html', {'workout': workout})
+
 
 def workout_new(request):
     if request.method == "POST":
@@ -26,6 +30,7 @@ def workout_new(request):
         form = WorkoutForm()
     return render(request, 'workouts/workout_form.html', {'form': form})
 
+
 def workout_edit(request, pk):
     workout = get_object_or_404(Workout, pk=pk)
     if request.method == "POST":
@@ -37,12 +42,14 @@ def workout_edit(request, pk):
         form = WorkoutForm(instance=workout)
     return render(request, 'workouts/workout_form.html', {'form': form})
 
+
 def workout_delete(request, pk):
     workout = get_object_or_404(Workout, pk=pk)
     if request.method == "POST":
         workout.delete()
         return redirect('workout_list')
     return render(request, 'workouts/workout_confirm_delete.html', {'workout': workout})
+
 
 def exercise_new(request, pk):
     workout = get_object_or_404(Workout, pk=pk)
@@ -57,6 +64,7 @@ def exercise_new(request, pk):
         form = ExerciseForm()
     return render(request, 'workouts/exercise_form.html', {'form': form})
 
+
 def exercise_edit(request, pk, exercise_pk):
     exercise = get_object_or_404(Exercise, pk=exercise_pk)
     if request.method == "POST":
@@ -68,9 +76,14 @@ def exercise_edit(request, pk, exercise_pk):
         form = ExerciseForm(instance=exercise)
     return render(request, 'workouts/exercise_form.html', {'form': form})
 
+
 def exercise_delete(request, pk, exercise_pk):
     exercise = get_object_or_404(Exercise, pk=exercise_pk)
     if request.method == "POST":
         exercise.delete()
         return redirect('workout_detail', pk=pk)
     return render(request, 'workouts/exercise_confirm_delete.html', {'exercise': exercise})
+
+
+def workout_list(request):
+    exercises = get_exercises()
