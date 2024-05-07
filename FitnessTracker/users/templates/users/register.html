@@ -1,0 +1,14 @@
+{% extends "main/header.html" %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+
+{% block content %}
+<h2>Register</h2>
+<form method="POST">
+    {% csrf_token %}
+    {{ register_form.as_p }}
+    <button type="submit">Register</button>
+</form>
+{% endblock %}
