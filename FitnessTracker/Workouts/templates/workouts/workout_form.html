@@ -5,3 +5,9 @@ class WorkoutForm(forms.ModelForm):
     class Meta:
         model = Workout
         fields = ['date', 'duration']
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Add Exercise</button>
+</form>
