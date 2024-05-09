@@ -4,3 +4,5 @@
 
 
 # pip install requests
+
+# python manage.py collectstatic

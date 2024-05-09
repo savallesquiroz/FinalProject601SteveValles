@@ -1,32 +1,77 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f8f9fa;
+    background-color: #f4f4f4;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    width: 80%;
+.hero {
+    background-image: url('https://images.pexels.com/photos/841131/pexels-photo-841131.jpeg?auto=compress&cs=tinysrgb&w=800&lazy=load');
+    background-size: cover;
+    height: 200px; /* Reduced height */
+    color: white;
+    text-align: center;
+    padding-top: 50px; /* Reduced padding */
+    animation: fadeIn 2s ease-in-out; /* Added fade-in animation */
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+.header-title {
+    font-size: 2.5em;
+    animation: slideIn 2s ease-in-out; /* Added slide-in animation */
+}
+
+@keyframes slideIn {
+    0% {transform: translateY(-50px); opacity: 0;}
+    100% {transform: translateY(0); opacity: 1;}
+}
+
+.header-primary {
+    color: #ff6347;
+}
+
+.header-sub {
+    color: #fff;
+}
+
+main {
     margin: 0 auto;
+    width: 50%;
+    padding: 20px;
 }
 
-.register-form {
+form {
     background-color: white;
-    margin-top: 50px;
-    padding: 30px;
-    border-radius: 12px;
+    padding: 20px;
+    border-radius: 8px;
 }
 
-.register-form button {
-    background-color: #008CBA;
+button {
+    background-color: #ff6347;
     color: white;
     border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    text-transform: uppercase;
     cursor: pointer;
-    width: 100%;
-    margin-top: 10px;
-    padding: 15px;
+    transition: background-color 0.3s ease-in-out; /* Added transition */
 }
 
-.register-form button:hover {
-    background-color: #007B9A;
+button:hover {
+    background-color: #ff7f50; /* Added hover effect */
 }
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
