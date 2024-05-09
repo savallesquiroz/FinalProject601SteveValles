@@ -1,9 +1,11 @@
 {% extends 'main/header.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
 
 {% block content %}
 <div class="container">
-    <div class="jumbotron mt-5">
-        <h1 class="display-4">Welcome to Workouts App!</h1>
+    <div class="jumbotron mt-5 home-content">
+        <h1 class="display-4 home-heading">Welcome to Workouts App!</h1>
         <p class="lead">This is a simple workout tracker app powered by WGER API.</p>
         <hr class="my-4">
         <p>Click the button below to start tracking your workouts.</p>

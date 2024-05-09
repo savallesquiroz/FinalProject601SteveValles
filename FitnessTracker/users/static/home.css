@@ -1,0 +1,15 @@
+.home-heading {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-content {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}

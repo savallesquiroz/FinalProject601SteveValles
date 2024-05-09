@@ -1,17 +1,12 @@
 {% extends 'main/header.html' %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'about.css' %}">
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
-            <div class="page-heading">
-                <h1>About Us</h1>
-                <span class="subheading">This is what we do.</span>
-            </div>
-            <p>Workouts App is a simple workout tracker app powered by WGER API. Our mission is to help people achieve their fitness goals by providing a platform where they can track their workouts and monitor their progress.</p>
-            <p>We believe that everyone should have access to the tools and resources they need to live a healthy and active lifestyle. That's why we've partnered with WGER to bring you a wide range of workouts and exercises that you can do at home or at the gym.</p>
-            <p>Whether you're a beginner just starting out on your fitness journey or an experienced athlete looking to take your training to the next level, Workouts App has something for you. Join us today and start achieving your fitness goals!</p>
-        </div>
-    </div>
+<div class="about-section">
+    <h1>About Us</h1>
+    <p>Workouts App is a simple workout tracker app powered by WGER API. Our mission is to help people achieve their fitness goals by providing a platform where they can track their workouts and monitor their progress.</p>
+    <!-- Add more content as needed -->
 </div>
 {% endblock %}
+
