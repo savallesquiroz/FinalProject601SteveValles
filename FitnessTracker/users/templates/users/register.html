@@ -1,17 +1,30 @@
-{% extends "main/header.html" %}
-
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
-
-{% block title %}
-Register
-{% endblock %}
-
-{% block content %}
-<h2>Register</h2>
-<form method="POST">
-    {% csrf_token %}
-    {{ register_form.as_p }}
-    <button type="submit">Register</button>
-</form>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts App - Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}"> <!-- Link to the new CSS file -->
+</head>
+<body>
+    <header class="zoom-me">
+        <!-- Other code -->
+    </header>
+    <main role="main">
+        <div class="contained">
+            <h2>Register</h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Register</button>
+            </form>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Workouts App. All rights reserved.</p>
+    </footer>
+</body>
+</html>

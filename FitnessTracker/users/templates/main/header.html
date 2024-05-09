@@ -4,24 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Workouts App</title>
-    <!-- Add your CSS files here -->
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-                <a href="#" class="brand-logo">Workouts App</a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="{% url 'home' %}">Home</a></li>
-                    <li><a href="{% url 'workouts' %}">Workouts</a></li>
-                    <li><a href="{% url 'about' %}">About</a></li>
-                    <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
-                </ul>
+   <div class="header">
+        <div class="sides">
+            <a href="{% url 'home' %}" class="logo">Workouts App</a>
+        </div>
+        <div class="sides">
+            <div class="dropdown">
+                <a class="menu dropbtn"></a>
+                <div class="dropdown-content">
+                    <a href="{% url 'home' %}">Home</a>
+                    <a href="{% url 'workouts' %}">Workouts</a>
+                    <a href="{% url 'register' %}">Register</a>
+                    <a href="{% url 'about' %}">About us</a>
+                    <!-- Agrega aquí más enlaces según sea necesario -->
+                </div>
             </div>
-        </nav>
-    </header>
-    {% block content %}
-    <!-- Page content goes here -->
-    {% endblock %}
+        </div>
+        <div class="info">
+            <h4><a href="{% url 'workouts' %}">WORKOUTS</a></h4>
+            <h1>YOUR FITNESS JOURNEY STARTS HERE</h1>
+            <div class="meta">
+                <a href="#" target="_b" class="author"></a><br>
+                By Workouts App Team
+            </div>
+        </div>
+    </div>
+    <section class="content">
+        <p>Welcome to Workouts App, your ultimate guide to fitness. Explore various workouts, track your progress, and achieve your fitness goals. Start your fitness journey with us today!</p>
+        <p align="center"><a href="#" class="btn twtr">Follow us on Twitter</a></p>
+    </section>
 </body>
 </html>

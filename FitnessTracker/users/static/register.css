@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.register-form {
+    background-color: white;
+    margin-top: 50px;
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.register-form button {
+    background-color: #008CBA;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+    padding: 15px;
+}
+
+.register-form button:hover {
+    background-color: #007B9A;
+}
