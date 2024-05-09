@@ -19,3 +19,7 @@ def home(request):
 
 def workouts(request):
     return render(request, 'workouts/workout_list.html')
+
+
+def about(request):
+    return render(request, 'users/about.html')
