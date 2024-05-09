@@ -1,16 +1,21 @@
 from django.shortcuts import render, redirect
-from .forms import NewUserForm
-from django.contrib.auth import login
-from django.contrib import messages
+from .forms import RegisterForm
 
-def register_request(request):
+
+def register(request):
     if request.method == "POST":
-        form = NewUserForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
-            user = form.save()
-            login(request, user)
-            messages.success(request, "Registration successful." )
-            return redirect("home")
-        messages.error(request, "Unsuccessful registration. Invalid information.")
-    form = NewUserForm()
-    return render (request=request, template_name="users/register.html", context={"register_form":form})
+            form.save()
+            return redirect('login')
+    else:
+        form = RegisterForm()
+    return render(request, 'users/register.html', {'form': form})
+
+
+def home(request):
+    return render(request, 'users/home.html')
+
+
+def workouts(request):
+    return render(request, 'workouts/workout_list.html')

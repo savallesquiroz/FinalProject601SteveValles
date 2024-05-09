@@ -1,0 +1,13 @@
+{% extends 'main/header.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Welcome to Workouts App!</h1>
+        <p class="lead">This is a simple workout tracker app powered by WGER API.</p>
+        <hr class="my-4">
+        <p>Click the button below to start tracking your workouts.</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'workouts' %}" role="button">Start Now</a>
+    </div>
+</div>
+{% endblock %}
