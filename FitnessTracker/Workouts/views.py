@@ -55,11 +55,14 @@ def workout_delete(request, pk):
     return render(request, 'workouts/workout_confirm_delete.html', {'workout': workout})
 
 
-def exercise_new(request):
+def exercise_new(request, workout_pk):
+    workout = get_object_or_404(Workout, pk=workout_pk)
     if request.method == "POST":
         form = ExerciseForm(request.POST)
         if form.is_valid():
-            exercise = form.save()
+            exercise = form.save(commit=False)
+            exercise.workout = workout
+            exercise.save()
             return redirect('exercise_detail', pk=exercise.pk)
     else:
         form = ExerciseForm()
