@@ -69,8 +69,9 @@ def exercise_new(request, workout_pk):
     return render(request, 'workouts/exercise_new.html', {'form': form})
 
 
-def exercise_edit(request, pk):
-    exercise = get_object_or_404(Exercise, pk=pk)
+def exercise_edit(request, workout_pk, exercise_pk):
+    workout = get_object_or_404(Workout, pk=workout_pk)
+    exercise = get_object_or_404(Exercise, pk=exercise_pk, workout=workout)
     if request.method == "POST":
         form = ExerciseForm(request.POST, instance=exercise)
         if form.is_valid():
