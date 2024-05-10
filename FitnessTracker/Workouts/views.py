@@ -26,10 +26,11 @@ def workout_new(request):
             workout = form.save(commit=False)
             workout.user = request.user
             workout.save()
-            return redirect('workout_detail', pk=workout.pk)
+            return redirect('exercise_new', pk=workout.pk)  # redirect to exercise_new
     else:
         form = WorkoutForm()
     return render(request, 'workouts/workout_form.html', {'form': form})
+
 
 
 def workout_edit(request, pk):
@@ -60,10 +61,11 @@ def exercise_new(request, pk):
             exercise = form.save(commit=False)
             exercise.workout = workout
             exercise.save()
-            return redirect('workout_detail', pk=workout.pk)
+            return redirect('workout_detail', pk=workout.pk)  # redirect to workout_detail
     else:
         form = ExerciseForm()
     return render(request, 'workouts/exercise_form.html', {'form': form})
+
 
 
 def exercise_edit(request, pk, exercise_pk):
