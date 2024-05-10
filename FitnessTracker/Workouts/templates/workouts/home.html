@@ -1,0 +1,10 @@
+
+{% block content %}
+<h1>Workouts Home</h1>
+<p>Welcome to the workouts section!</p>
+<ul>
+    <li><a href="{% url 'workout_list' %}">View all workouts</a></li>
+    <li><a href="{% url 'workout_new' %}">Create a new workout</a></li>
+    <!-- Add more links as needed -->
+</ul>
+{% endblock %}

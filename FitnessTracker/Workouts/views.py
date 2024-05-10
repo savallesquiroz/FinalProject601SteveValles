@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Workout, Exercise
 from .forms import WorkoutForm, ExerciseForm
 from .api import get_exercises
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 
 def home(request):
@@ -87,3 +88,7 @@ def exercise_delete(request, pk, exercise_pk):
 
 def workout_list(request):
     exercises = get_exercises()
+
+
+def workout_home(request):
+    return render(request, 'workouts/home.html')

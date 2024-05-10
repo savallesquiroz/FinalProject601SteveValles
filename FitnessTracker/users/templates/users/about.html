@@ -1,7 +1,19 @@
-{% extends 'main/header.html' %}
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{% static 'about.css' %}">
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workouts App - Register</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+</head>
+<body>
+    <div class='hero'>
+        <div class="hero-one"></div>
+        <div class="hero-two"></div>
+        <h1 class="header-title"><span class="header-primary">Workouts</span><span class="header-sub"></span></h1>
+    </div>
+    <main>
 {% block content %}
 <div class="about-section">
     <h1>About Us</h1>

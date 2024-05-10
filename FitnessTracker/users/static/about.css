@@ -1,8 +1,181 @@
-.about-heading {
-    text-align: center;
-    margin-top: 50px;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.about-content {
-    margin: 50px 0;
+.hero {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  color: #CCC;
+  position: relative;
+  text-transform: uppercase;
+  font-family: 'Amatic SC', sans-serif;
+  letter-spacing: 17.5px;
+}
+
+.hero-one {
+  top: 0;
+  position: absolute;
+  width: 60%;
+  background-color: black;
+  height: 100vh;
+  clip-path: polygon(0 0, 60vw 0, 40vw 100vh, 0 100vh);
+  z-index: 1;
+  background-image:linear-gradient(rgba(0,0,0,.5), rgba(0,0,0,.5)), url(https://images.pexels.com/photos/878151/pexels-photo-878151.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.hero-two {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  background-color: green;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.5)), url(https://images.pexels.com/photos/3764014/pexels-photo-3764014.jpeg?auto=compress&cs=tinysrgb&w=600);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.header-title {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-primary {
+  font-size: 2em;
+  display: block;
+  font-weight: 700;
+}
+
+body {
+  background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 500px;
+  padding: 20px;
+  width: 320px;
+  margin: 20px auto; /* Adjust the top and bottom margin as needed */
+}
+
+/* ... rest of your CSS ... */
+
+
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-top: 30px;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 10px;
+}
+
+.input-container {
+  height: 50px;
+  position: relative;
+  width: 100%;
+}
+
+.ic1 {
+  margin-top: 40px;
+}
+
+.ic2 {
+  margin-top: 30px;
+}
+
+.input {
+  background-color: #303245;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  font-size: 18px;
+  height: 100%;
+  outline: 0;
+  padding: 4px 20px 0;
+  width: 100%;
+}
+
+.cut {
+  background-color: #15172b;
+  border-radius: 10px;
+  height: 20px;
+  left: 20px;
+  position: absolute;
+  top: -20px;
+  transform: translateY(0);
+  transition: transform 200ms;
+  width: 76px;
+}
+
+.cut-short {
+  width: 50px;
+}
+
+.input:focus ~ .cut,
+.input:not(:placeholder-shown) ~ .cut {
+  transform: translateY(8px);
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.input:focus ~ .placeholder,
+.input:not(:placeholder-shown) ~ .placeholder {
+  transform: translateY(-30px) translateX(10px) scale(0.75);
+}
+
+.input:not(:placeholder-shown) ~ .placeholder {
+  color: #808097;
+}
+
+.input:focus ~ .placeholder {
+  color: #dc2f55;
+}
+
+.submit {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  // outline: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.submit:active {
+  background-color: #06b;
 }
