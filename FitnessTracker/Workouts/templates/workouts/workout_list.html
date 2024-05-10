@@ -1,4 +1,19 @@
-{% for workout in workouts %}
-    <h2>{{ workout.date }}</h2>
-    <p>{{ workout.duration }}</p>
-{% endfor %}
+
+{% block content %}
+<h1>Workouts</h1>
+<ul>
+    {% for workout in workouts %}
+        <li>
+            <a href="{% url 'workout_detail' workout.id %}">{{ workout.date }}</a>
+            <a href="{% url 'workout_edit' workout.id %}">Edit</a>
+            <form method="POST" action="{% url 'workout_delete' workout.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% empty %}
+        <li>No workouts yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'workout_new' %}">Create a new workout</a>
+{% endblock %}

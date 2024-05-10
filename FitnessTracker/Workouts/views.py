@@ -32,6 +32,7 @@ def workout_new(request):
     return render(request, 'workouts/workout_form.html', {'form': form})
 
 
+
 def workout_edit(request, pk):
     workout = get_object_or_404(Workout, pk=pk)
     if request.method == "POST":
@@ -60,7 +61,7 @@ def exercise_new(request, pk):
             exercise = form.save(commit=False)
             exercise.workout = workout
             exercise.save()
-            return redirect('workout_detail', pk=workout.pk)  # redirect to workout_detail
+            return redirect('workout_list')  # redirect to workout_list
     else:
         form = ExerciseForm()
     return render(request, 'workouts/exercise_form.html', {'form': form})
@@ -85,10 +86,6 @@ def exercise_delete(request, pk, exercise_pk):
         exercise.delete()
         return redirect('workout_detail', pk=pk)
     return render(request, 'workouts/exercise_confirm_delete.html', {'exercise': exercise})
-
-
-def workout_list(request):
-    exercises = get_exercises()
 
 
 def workout_home(request):
