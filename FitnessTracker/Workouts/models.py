@@ -9,6 +9,7 @@ class Workout(models.Model):
     def __str__(self):
         return f'{self.user.username}\'s workout on {self.date}'
 
+
 class Exercise(models.Model):
     name = models.CharField(max_length=200)
     sets = models.IntegerField()

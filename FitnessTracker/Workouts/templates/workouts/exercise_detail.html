@@ -1,0 +1,16 @@
+
+{% block content %}
+  <h1>Exercise Detail</h1>
+  <h2>{{ exercise.name }}</h2>
+
+  <!-- Add more details about the exercise here -->
+  <p>Sets: {{ exercise.sets }}</p>
+  <p>Reps: {{ exercise.reps }}</p>
+  <p>Weight: {{ exercise.weight }}</p>
+
+  <a href="{% url 'exercise_edit' exercise.id %}">Edit</a>
+  <form method="POST" action="{% url 'exercise_delete' exercise.id %}">
+    {% csrf_token %}
+    <button type="submit">Delete</button>
+  </form>
+{% endblock %}

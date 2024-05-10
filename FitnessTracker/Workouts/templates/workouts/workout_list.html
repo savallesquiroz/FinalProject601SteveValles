@@ -1,4 +1,3 @@
-
 {% block content %}
 <h1>Workouts</h1>
 <ul>
@@ -16,4 +15,21 @@
     {% endfor %}
 </ul>
 <a href="{% url 'workout_new' %}">Create a new workout</a>
+
+<h1>Exercises</h1>
+<ul>
+    {% for exercise in exercises %}
+        <li>
+            <a href="{% url 'exercise_detail' exercise.id %}">{{ exercise.name }}</a> <!-- Replace with your actual field name -->
+            <a href="{% url 'exercise_edit' exercise.id %}">Edit</a>
+            <form method="POST" action="{% url 'exercise_delete' exercise.id %}">
+                {% csrf_token %}
+                <button type="submit">Delete</button>
+            </form>
+        </li>
+    {% empty %}
+        <li>No exercises yet.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'exercise_new' %}">Create a new exercise</a>
 {% endblock %}
