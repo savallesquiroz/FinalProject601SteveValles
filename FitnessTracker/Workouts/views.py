@@ -28,11 +28,10 @@ def workout_new(request):
             workout = form.save(commit=False)
             workout.user = request.user
             workout.save()
-            return redirect('exercise_new', pk=workout.pk)  # redirect to exercise_new
+            return redirect('exercise_new', workout_pk=workout.pk)  # redirect to exercise_new
     else:
         form = WorkoutForm()
     return render(request, 'workouts/workout_form.html', {'form': form})
-
 
 
 def workout_edit(request, pk):
