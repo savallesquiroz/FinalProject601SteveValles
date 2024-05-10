@@ -1,0 +1,30 @@
+{% extends "main/header.html" %}
+{% block content %}
+<h1>Edit/Delete</h1>
+
+<h2>Edit Workout</h2>
+<form method="POST" action="{% url 'workout_edit' workout.id %}">
+    {% csrf_token %}
+    {{ workout_form.as_p }}
+    <button type="submit">Save changes</button>
+</form>
+
+<h2>Delete Workout</h2>
+<form method="POST" action="{% url 'workout_delete' workout.id %}">
+    {% csrf_token %}
+    <button type="submit">Delete workout</button>
+</form>
+
+<h2>Edit Exercise</h2>
+<form method="POST" action="{% url 'exercise_edit' workout.id exercise.id %}">
+    {% csrf_token %}
+    {{ exercise_form.as_p }}
+    <button type="submit">Save changes</button>
+</form>
+
+<h2>Delete Exercise</h2>
+<form method="POST" action="{% url 'exercise_delete' workout.id exercise.id %}">
+    {% csrf_token %}
+    <button type="submit">Delete exercise</button>
+</form>
+{% endblock %}
