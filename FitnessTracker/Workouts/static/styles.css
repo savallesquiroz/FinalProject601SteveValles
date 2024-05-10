@@ -10,32 +10,43 @@ body {
     margin: 0 auto;
 }
 
-header {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-}
-
-h1, h2, h3 {
-    margin: 0;
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
 }
 
 a {
-    color: #333;
+    color: #0066c0;
     text-decoration: none;
 }
 
-.workout {
-    background-color: white;
-    margin: 10px 0;
-    padding: 20px;
-    border-radius: 4px;
+a:hover {
+    color: #ff9900;
 }
 
-.exercise {
-    margin: 10px 0;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+form {
+    width: 100%;
+    margin-top: 20px;
 }
+
+form input[type="text"],
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+form button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    background-color: #0066c0;
+}
+
+form button[type="submit"]:hover {
+    background-color: #ff9900;
+}
+
